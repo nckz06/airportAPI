@@ -4,10 +4,13 @@
  */
 package br.gm.nicolas.airports.repositories;
 
+import br.gm.nicolas.airports.entities.Airport;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author digma
  */
-public interface AirportRepository {
+public interface AirportRepository extends JpaRepository<Airport, Long> {
     
 }
