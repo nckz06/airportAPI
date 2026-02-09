@@ -86,7 +86,7 @@ public class Airport {
         this.icaoCode = icaoCode;
     }
 
-    public String getIataoCode() {
+    public String getIataCode() {
         return icaoCode;
     }
 

@@ -4,6 +4,7 @@
  */
 package br.gm.nicolas.airports.controllers;
 
+import br.gm.nicolas.airports.DTO.AirportMinDTO;
 import br.gm.nicolas.airports.entities.Airport;
 import br.gm.nicolas.airports.service.AirportService;
 import java.util.List;
@@ -52,6 +53,28 @@ public class AirportController {
             return ResponseEntity.notFound().build();
         } else {
             // Possui dados
+            // ok devolve 200
+            return ResponseEntity.ok(result);
+        }
+        
+    }
+    
+    /**
+     * 
+     * @param countryName
+     * @return 
+     */
+    @GetMapping("/country/{countryName}")
+    public ResponseEntity<List<AirportMinDTO>> findByCountryIgnoreCase(@PathVariable String countryName) {
+        
+        List<AirportMinDTO> result = airportService.findByCountry(countryName);
+        
+        if (result.isEmpty()) {
+            // Lista vazia
+            // notFound devolve 404
+            return ResponseEntity.notFound().build();
+        } else {
+            // Tem dados
             // ok devolve 200
             return ResponseEntity.ok(result);
         }
