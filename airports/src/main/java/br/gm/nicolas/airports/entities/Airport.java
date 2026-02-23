@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @author digma
+ * @author nckz06_
  */
 @Entity
 @Table(name = "airport")

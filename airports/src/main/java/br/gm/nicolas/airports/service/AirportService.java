@@ -5,7 +5,9 @@
 package br.gm.nicolas.airports.service;
 
 import br.gm.nicolas.airports.DTO.AirportMinDTO;
+import br.gm.nicolas.airports.DTO.AirportNearMeDTO;
 import br.gm.nicolas.airports.entities.Airport;
+import br.gm.nicolas.airports.projections.AirportNearMeProjection;
 import br.gm.nicolas.airports.repositories.AirportRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author digma
+ * @author nckz06_
  */
 
 @Service
@@ -62,6 +64,22 @@ public class AirportService {
     public Airport findByIataCode(String iataCode) {
         Airport result = airportRepository.findByIataCode(iataCode);
         return result;
+    }
+    
+    /**
+     * Retorna DTO AirportNearMe
+     * 
+     * @param latitude
+     * @param longitude
+     * @return 
+     */
+    public List<AirportNearMeDTO> findNearMe(double latitude, double longitude) {
+        List<AirportNearMeProjection> resultNearAirports = airportRepository.findNearMe(latitude, longitude);
+        
+        List<AirportNearMeDTO> resultDTO = resultNearAirports.stream()
+                .map(x -> new AirportNearMeDTO(x)).toList();
+        
+        return resultDTO;
     }
     
 }

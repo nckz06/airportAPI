@@ -8,7 +8,7 @@ import br.gm.nicolas.airports.entities.Airport;
 
 /**
  *
- * @author digma
+ * @author nckz06_
  */
 public class AirportMinDTO {
     
