@@ -19,7 +19,7 @@ public interface AirportRepository extends JpaRepository<Airport, Long> {
     List<Airport> findByCityIgnoreCase(String city);
     List<Airport> findByCountryIgnoreCase(String country);
     
-    Airport findByIataCode(String iataCode);
+    Airport findByIataCodeIgnoreCase(String iataCode);
     
     @Query(nativeQuery = true, value = """
         SELECT

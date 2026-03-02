@@ -84,7 +84,7 @@ public class AirportController {
     }
     
     @GetMapping("/iatacode/{iataCode}")
-    public ResponseEntity<Airport> findByIataCode(@PathVariable String iataCode) {
+    public ResponseEntity<Airport> findByIataCodeIgnoreCase(@PathVariable String iataCode) {
         
         Airport result = airportService.findByIataCode(iataCode);
         

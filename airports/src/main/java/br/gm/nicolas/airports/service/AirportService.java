@@ -62,7 +62,7 @@ public class AirportService {
      * @return 
      */
     public Airport findByIataCode(String iataCode) {
-        Airport result = airportRepository.findByIataCode(iataCode);
+        Airport result = airportRepository.findByIataCodeIgnoreCase(iataCode);
         return result;
     }
     
