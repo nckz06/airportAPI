@@ -19,24 +19,25 @@ Este *endpoint* buscará o aeroporto mais próximo, utilizando a URI: ***/airpor
 
 ## Novos Comandos Aprendidos
 ### ResponseEntity<Objeto>
-
+É uma classe utilizada pelo Spring Framework, representando toda a resposta HTTP em métodos de um ***@RestController***. Ela permite o controle total e, especialmente, o corpo da resposta (*body*), o código de status HTTP (*status code*) e os cabeçalhos (*headers*) 
 
 ### @RestController
-
+Anuncia ao Spring que aquela classe vai ser um *Controller*, e que haverá *endpoints* nela.
 
 ### @Service
-O comando ***@Service*** antes de uma classe, indica que ela contém uma lógica de negócio;
+O comando ***@Service*** antes de uma classe, indica que ela contém uma lógica de negócio.
 
 ### @Autowired
 O comando ***@Autowired*** injeta automaticamente, neste caso, a interface *AirportRepository*. Seria uma abreviação de ``AirportRepository airportRepository = new AirportRepository();``. Ele injeta a dependência dentro da classe.
 
 ### @PathVariable
-
+Mapeia a variável recebida na URI *cityName* como uma String. Assim ela pode ser utilizada dentro do método. é obrigatório o mesmo nome declarado entre {} do ***@GetMapping***.
 
 ### @GetMapping
-
+Indica que o método a seguir corresponde ao *endpoint* do caminho estipulado.
 
 ### @RequestBody
-
+É utilizada para mapear o corpo de uma requisição HTTP diretamente para um objeto JAVA. Ela é fundamental na criação de APIs RESTful, permitindo que o framework converta automaticamente os dados enviados pelo cliente no formato de rede para um objeto manipulável no *Controller*.
 
 ### @RequestParam
+É utilizada para extrair parâmetros de consulta (query parameters) da URL ou dados de formulário enviados em uma requisição HTTP e vinculá-los aos parâmetros de um método no seu *Controller*.
