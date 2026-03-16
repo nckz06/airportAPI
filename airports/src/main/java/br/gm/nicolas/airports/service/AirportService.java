@@ -82,4 +82,11 @@ public class AirportService {
         return resultDTO;
     }
     
+    public Airport saveAirport(Airport novoAirport) {
+        
+        Airport airport = airportRepository.save(novoAirport);
+        return airport;
+        
+    }
+    
 }
